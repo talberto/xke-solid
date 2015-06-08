@@ -3,7 +3,6 @@ package fr.xebia.model.fileexplorer;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -17,15 +16,15 @@ import static org.mockito.Mockito.when;
 public class FileExplorerTest {
 
     @Mock
-    File directory;
+    private File directory;
 
     @Mock
-    File file1;
+    private File file1;
 
     @Mock
-    File file2;
+    private File file2;
 
-    FileExplorer fileExplorer;
+    private FileExplorer fileExplorer;
 
     @Before
     public void setUp() {

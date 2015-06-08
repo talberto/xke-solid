@@ -1,5 +1,6 @@
 package fr.xebia.io;
 
+import fr.xebia.controls.FileExplorerControls;
 import fr.xebia.model.fileexplorer.FileExplorer;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,18 +15,19 @@ import java.awt.event.KeyEvent;
 @RunWith(MockitoJUnitRunner.class)
 public class KeyboardFileExplorerTest {
 
-    Keyboard keyboard;
+    private Keyboard keyboard;
 
     @Mock
-    FileExplorer fileExplorer;
+    private FileExplorer fileExplorer;
 
     @Before
     public void setUp() throws Exception {
-        //!TODO Create a Keyboard delegating to a FileExplorer
+        FileExplorerControls fileExplorerControls = new FileExplorerControls(fileExplorer);
+        keyboard = new Keyboard(fileExplorerControls);
     }
 
     @Test
-    public void should_open_directory_on_key_left() {
+    public void should_open_directory_on_key_right() {
         // When
         keyboard.keyPressed(mockKeyEvent(KeyEvent.VK_RIGHT));
 

@@ -1,5 +1,6 @@
 package fr.xebia.io;
 
+import fr.xebia.controls.MowerControls;
 import fr.xebia.model.mower.Mower;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,14 +15,15 @@ import java.awt.event.KeyEvent;
 @RunWith(MockitoJUnitRunner.class)
 public class KeyboardMowerTest {
 
-    Keyboard keyboard;
+    private Keyboard keyboard;
 
     @Mock
-    Mower mower;
+    private Mower mower;
 
     @Before
     public void setUp() throws Exception {
-        keyboard = new Keyboard(mower);
+        MowerControls mowerControls = new MowerControls(mower);
+        keyboard = new Keyboard(mowerControls);
     }
 
     @Test

@@ -1,31 +1,31 @@
 package fr.xebia.io;
 
-import fr.xebia.model.mower.Mower;
+import fr.xebia.controls.ControlsService;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Keyboard implements KeyListener {
 
-    Mower mower;
+    private ControlsService controlsService;
 
-    public Keyboard(Mower mower) {
-        this.mower = mower;
+    public Keyboard(ControlsService controlsService) {
+        this.controlsService = controlsService;
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
-                mower.advance();
+                controlsService.up();
                 break;
             case KeyEvent.VK_RIGHT:
-                mower.turnRight();
+                controlsService.right();
                 break;
             case KeyEvent.VK_DOWN:
-                throw new UnsupportedOperationException("Mower can't move backwards !");
+                controlsService.down();
             case KeyEvent.VK_LEFT:
-                mower.turnLeft();
+                controlsService.left();
                 break;
         }
     }
