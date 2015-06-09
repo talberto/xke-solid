@@ -1,0 +1,14 @@
+*.DS_Store
+node_modules
+/dist
+.tmp
+.sass-cache
+.idea/
+src/main/web/libs/bower_components
+src/main/web/assets/fonts/myicons
+war
+*.iml
+*.log*
+npm-debug.log
+auto-generated
+target/
