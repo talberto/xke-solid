@@ -5,17 +5,17 @@ import static fr.xebia.xke.solid.ocp.Orientation.NORTH;
 import static fr.xebia.xke.solid.ocp.Orientation.SOUTH;
 import static fr.xebia.xke.solid.ocp.Orientation.WEST;
 
-public class Mower {
+public class Hoover {
 
     private final String program;
     private Position currentPosition = new Position();
     private Orientation currentOrientation = Orientation.NORTH;
 
-    public Mower(String program) {
+    public Hoover(String program) {
         this.program = program;
     }
 
-    public void mow() {
+    public void clean() {
         for (int i = 0 ; i < program.length() ; i++) {
             switch (program.charAt(i)) {
                 case('A'):

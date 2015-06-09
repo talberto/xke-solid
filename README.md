@@ -2,19 +2,25 @@
 
 # Why?
 ```java
-switch(mower.getNextCommand()) {
-  case(Command.goForward) :
-    mower.goForward();
-    break;
-  case(Command.turnRight) :
-    mower.turnLeft();
-    break;
-  [...]
-  default :
-    throw new IllegalArgumentException(“Unknown command”);	
+public void clean() {
+  for (int i = 0 ; i < program.length() ; i++) {
+    switch (program.charAt(i)) {
+      case('A'):
+        goForward();
+        break;
+      case('D'):
+        turnRight();
+        break;
+      case('G'):
+        turnLeft();
+        break;
+      default:
+        throw new IllegalArgumentException("Invalid command: " + program.charAt(i));
+    }
+  }
 }
 ```
-When adding a new command changes multiple classes like adding one new `Command` and updating the already created class `Mower`, the class which runs the program, you should stop and think.
+When adding a new command changes multiple classes like adding one new `Command` and updating the already created class `Hoover`, the class which runs the program, you should stop and think.
 
 # Definition :
 > Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification
